@@ -1,0 +1,82 @@
+.licences-container {
+	position: relative;
+	overflow: hidden;
+
+	.licences-content, .container__title {
+		z-index: 2;
+		position: relative;
+	}
+
+	.licences-content {
+		padding-top: 15px;
+	}
+
+	.bg-image-logo {
+		position: absolute;
+		z-index: 0;
+		top: 30px;
+		bottom: 30px;
+		left: 224px;
+		right: 0px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		opacity: 0.3;
+	}
+
+	.logos {
+		margin-right: 42px;
+
+		.logo {
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			margin-bottom: 7px;
+
+			@include logos-size();
+		}
+	}
+
+	.descriptor-container {
+		.text {
+			width: 20vw;
+
+			p {
+				padding-bottom: 72px;
+			}
+		}
+	}
+
+	.slider-container {
+		position: relative;
+		height: 100%;
+		display: flex;
+
+		.slide {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			
+			@include licences-home--size();
+		}
+
+		#slide-1 {
+			transform: translateX(0px);
+			z-index: 4;
+		}
+
+		#slide-2 {
+			transform: scale(0.9) translateX(-100px);
+			z-index: 3;
+		}
+
+		#slide-3 {
+			transform: scale(0.8) translateX(-250px);
+			z-index: 2;
+		}
+
+		#slide-4 {
+			transform: scale(0.7) translateX(-500px);
+			z-index: 1;
+		}
+	}
+}

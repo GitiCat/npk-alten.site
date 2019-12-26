@@ -1,0 +1,148 @@
+.m-button--container {
+    position: fixed;
+    top: 42px;
+    left: 42px;
+
+    width: 50px;
+    height: 50px;
+
+	background-color: $white_color;
+    border-radius: 100%;
+    border: 1px solid transparent;
+
+    z-index: 5;
+
+    transition: background-color 0.3s ease;
+
+    button {
+    	width: 100%;
+    	background-color: transparent;
+    	border: 0;
+    	border-radius: 100%;
+    	outline: none !important;
+
+		cursor: pointer;
+
+    	&:focus, &:active {
+    		outline: none !important;
+    	}
+
+    	&::-moz-focus-inner {
+    		border: 0 !important;
+    	}
+    }
+
+    .menu-icon {
+
+    	width: 100%;
+    	height: 100%;
+    	position: relative;
+
+    	div {
+    		position: absolute;
+    		transition: all .3s ease;
+    		background-color: $dark_title_color;
+    		height: 2px;
+    		width: 20px;
+    		margin: 2px auto;
+
+    		&:first-child {
+    			-webkit-transform: translateY(-7px);
+    		}
+
+    		&.second {
+    			-webkit-transform: translateY(0px);
+    		}
+
+    		&:last-child {
+    			-webkit-transform: translateY(7px);
+    		}
+    	}
+    }
+}
+
+.navigation-panel {
+
+	&.showing {
+		display: flex;
+		opacity: 1;
+	}
+}
+
+.m-container {
+
+	.navigation-panel {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: #316cc6d6;
+		z-index: -1;
+		opacity: 0;
+
+		transition: opacity 0.3s ease;
+
+		.navigation-container {
+			
+			margin: 42px 0;
+			margin-left: 14%;
+
+			&:first-child {
+				margin: 42px 0;
+				margin-left: 14%;
+			}
+
+			a {
+				font-size: 18px;
+				font-weight: normal;
+				line-height: 1.5;
+				letter-spacing: -.03rem;
+				color: $white_color;
+				text-decoration: none;
+				transition: color .3s ease;
+				margin: 0 0 8px;
+
+				&:hover {
+					color: $dark_text_color;
+				}
+			}
+
+			hr {
+				width: 100%;
+				height: 1px;
+				border: 0;
+				margin: 0;
+				margin-bottom: 8px;
+				padding: 0;
+				opacity: 0;
+			}
+		}
+	}
+
+	&.showing {
+
+		.m-button--container {
+			background-color: transparent;
+			border: 1px solid $white_color;
+
+			hr {
+
+			}
+		}
+
+		.menu-icon {
+
+			div {
+				background-color: $white_color;
+			}
+		}
+
+		.navigation-panel {
+			z-index: 4;
+			opacity: 1;
+		}
+	}
+}
+
+@import "./items/items.scss"

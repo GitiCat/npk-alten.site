@@ -1,0 +1,11 @@
+.litle-list-item {
+	margin-bottom: 24px;
+    display: block;
+    width: 295px;
+    padding: 12px 12px;
+
+    h2 {
+	    -webkit-line-clamp: 2;
+	    margin-bottom: 6px;
+    }
+}

@@ -1,0 +1,10 @@
+alten.web-site/dist
+alten.web-site/node_modules
+
+alten.web-server/api_v0/__pycache__
+alten.web-server/server_app/__pycache__
+alten.web-server/webserver/__pycache__
+
+alten.web-server/api_v0/migrations
+alten.web-server/server_app/migrations
+alten.web-server/webserver/migrations

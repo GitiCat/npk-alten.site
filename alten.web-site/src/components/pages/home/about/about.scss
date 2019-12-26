@@ -1,0 +1,38 @@
+.numeric-list {
+	box-sizing: border-box;
+	background-color: $white_color;
+	list-style: none;
+
+	li {
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+
+		span {
+			font-feature-settings: normal;
+
+			&:first-child {
+				font-size: 85px;
+				min-width: 108px;
+				margin-left: -.4ch;
+				margin-top: -.1em;
+				margin-right: 60px;
+
+				color: #d0ebff;
+                font-weight: 700;
+                letter-spacing: 2px;
+			}
+
+			font-size: $normalTextFontSize;
+            max-width: 300px;
+            position: relative;
+            padding-bottom: 45px;
+
+            display: block;
+            color: $dark_text_color;
+            font-weight: 400;
+            letter-spacing: -.03em;
+            line-height: 1.5;
+		}
+	}
+}

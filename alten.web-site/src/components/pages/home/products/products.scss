@@ -1,0 +1,43 @@
+.products-container {
+
+	flex-flow: row wrap;
+
+	.product-resize {
+		@include list-item--flex-flow(3);
+	}
+
+	.product-container {
+		box-shadow: none;
+		height: 45vh;
+
+		.product-image {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			height: 100%;
+			width: 100%;
+		}
+
+		.content {
+			
+			@include desc-blocks--flex-basis(200px, 279px)
+
+			width: 100%;
+			padding: 15px 0px;
+
+			.title {
+				margin-bottom: 7.5px;
+			}
+
+			.descriptor {
+				p {
+					display: none;
+
+					&:first-child {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

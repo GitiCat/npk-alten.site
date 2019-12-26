@@ -1,0 +1,44 @@
+.s-c-product__display {
+
+	.scp-d__title {
+		margin-bottom: 32px;
+	}
+
+	.spc-d__content {
+
+		&-data {
+
+			&-text {
+				p {
+					text-indent: 0 !important;
+				}
+			}
+
+			&-text, &-spec {
+				margin-bottom: 32px;
+			}
+
+			&-text, &-spec, &-files {
+				.container__litle-title {
+					margin-bottom: 12px;
+				}
+			}
+
+			.prod-table-property {
+
+				padding-bottom: 10px;
+				border-bottom: 1px solid #ff5f52cc;
+
+				thead {
+					height: 40px;
+					background-color: #ff5f52cc;
+
+					td {
+						padding: 0 15px;
+						color: $white_color;
+					}
+				}
+			}
+		}
+	}
+}

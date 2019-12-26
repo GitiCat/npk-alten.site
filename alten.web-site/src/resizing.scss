@@ -1,0 +1,142 @@
+@mixin blocks-padding($x, $y-big, $y-laptop) {
+
+	@media only screen 
+		and (min-device-width: 768px) 
+		and (max-device-width: 1024px) 
+		and (orientation: portrait) {
+
+		padding: $x $y-laptop;
+	}
+
+	@media only screen and (min-width: 1224px) {
+		padding: $x $y-laptop;
+	}
+
+	@media only screen and (min-width: 1824px) {
+		padding: $x $y-big;
+	}
+}
+
+//	lists element layout
+@mixin list-item--flex-flow($col) {
+
+	@media only screen and (min-width: 1224px) {
+		width: calc(100% / #{$col});
+	}
+
+	@media only screen and (min-width: 1824px) {
+		width: calc((100% - 30px) / #{$col});
+	}
+}
+
+//	flex basis value with screen resizing
+@mixin desc-blocks--flex-basis($big, $laptop) {
+
+	@media only screen and (min-width: 1224px) {
+		flex-basis: $laptop;
+	}
+
+	@media only screen and (min-width: 1824px) {
+		flex-basis: $big;
+	}
+}
+
+//	resizing titel texts
+@mixin titels-text() {
+
+	@media only screen and (min-width: 1224px) {
+		h2 {
+			font-size: $laptopScreenTitleSize;
+		}
+
+		p {
+			font-size: $laptopScreenSubtitleSize;
+		}
+	}
+
+	@media only screen and (min-width: 1824px) {
+		h2 {
+			font-size: $middleTitleFontSize;
+		}
+
+		p {
+			font-size: $bigTextFontSize;
+		}
+	}
+
+}
+
+//	resizing litle title texts
+@mixin litle-titles-text() {
+	
+	@media only screen and (min-width: 1224px) {
+		h2 {
+			font-size: $laptopScreenLittleTitleSize;
+		}
+
+		p {
+			font-size: $laptopScreenLittleSubtitleAndTextSize;
+		}
+	}
+
+	@media only screen and (min-width: 1824px) {
+		h2 {
+			font-size: $normalTextFontSize;
+		}
+
+		p {
+			font-size: $normalTextFontSize;
+		}
+	}
+}
+
+@mixin licences-home--size() {
+	
+	@media only screen and (min-width: 1224px) {
+		width: 239px;
+		height: 361px;
+	}
+
+	@media only screen and (min-width: 1624px) {
+		width: 268px;
+		height: 405px;
+	}
+
+	@media only screen and (min-width: 1824px) {
+		width: 288px;
+		height: 435px;
+	}
+}
+
+@mixin logos-size() {
+
+	@media only screen and (min-width: 1224px) {
+		width: 85px;
+		height: 85px;
+	}
+
+	@media only screen and (min-width: 1824px) {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1223px) {
+
+	.flex-col-30, .flex-col-50, .flex-col-60 {
+		width: 100% !important;
+	}
+
+	.about, .services, .news-container, .contacts-container {
+
+		.flex-dir--row:first-child {
+			flex-direction: column;
+		}
+
+		.flex-dir--row {
+			&.row-hp-start {
+				justify-content: center;
+			}
+		}
+	}
+}

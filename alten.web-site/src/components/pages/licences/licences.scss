@@ -1,0 +1,43 @@
+.licence-item--container {
+	margin-bottom: 72px;
+
+	.licence-item--image {
+		margin-right: 42px;
+	}
+
+	.licence-item--content {
+
+		.licence-item--content__text {
+			ul {
+
+				list-style-type: disc !important;
+				padding: 12px 0;
+				padding-left: 42px;
+				margin-bottom: 22px;
+				background-color: #ff5f52;
+
+				li {
+					position: relative;
+					font-size: 16px;
+					margin: 0 0 16px;
+					color: $white_color;
+
+					&:last-child {
+						margin: 0;
+					}
+
+					&:before {
+						content: "";
+						position: absolute;
+						left: -20px;
+						top: 36%;
+						height: 7px;
+						width: 7px;
+						background-color: $white_color;
+						border-radius: 100%;
+					}
+				}
+			}
+		}
+	}
+}

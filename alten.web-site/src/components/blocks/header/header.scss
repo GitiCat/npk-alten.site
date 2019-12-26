@@ -1,0 +1,12 @@
+.header-container {
+
+	@include blocks-padding(52px, 14.5%, 7.25%);
+
+	hr {
+		display: block;
+		width: 115px;
+		height: 1px;
+		border: 0;
+		margin: 7px 0;
+	}
+}

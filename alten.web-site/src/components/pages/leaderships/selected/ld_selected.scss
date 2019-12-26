@@ -1,0 +1,32 @@
+.selected-leader-container {
+	position: relative;
+
+	.sli-image {
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		height: 40vh;
+		width: 100vw;
+		margin-bottom: 12px;
+		max-width: 260px;
+		min-width: 260px;
+	}
+
+	hr {
+		width: 172px;
+		margin: 0;
+		margin-bottom: 12px;
+		height: 1px;
+		border: 0;
+	}
+
+	.sli-content {
+		padding: 0px 72px;
+
+		.container-descriptor {
+			p {
+				text-indent: 1.25em;
+			}
+		}
+	}
+}
