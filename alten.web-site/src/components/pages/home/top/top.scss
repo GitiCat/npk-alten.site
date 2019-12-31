@@ -4,6 +4,59 @@
 	height: 100vh;
 	z-index: 1;
 
+	.t-button {
+		position: absolute;
+		bottom: 4.5%;
+		left: 0;
+		right: 0;
+		text-align: center;
+
+		& > div {
+
+			position: relative;
+			display: inline-block;
+			height: 47px;
+			width: 47px;
+			cursor: pointer;
+
+			&:before, &:after {
+				animation-name: down-anim;
+                animation-duration: 2.5s;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: infinite;
+			}
+
+			&:before, &:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				border-radius: 100%;
+				z-index: -1;
+			}
+
+			&:before {
+				border: 1px solid #03a9f4;
+				animation-delay: .5s;
+			}
+
+			&:after {
+				border: 1px solid #03a9f4;
+				animation-delay: 0s;
+			}
+		}
+
+		svg {
+			position: relative;
+			color:white;
+			border-radius: 100%;
+			padding: 7px;
+			font-size: 32px;
+		}
+	}
+
 	&_bg-image {
 		z-index: -1;
 		background-image: url("../public/media/home-top.jpg");
@@ -15,11 +68,55 @@
 		padding-left: 7.5%;
 
 		p {
-		color: $light_gray_color;
+			color: $light_gray_color;
+			padding: 5px;
+			
+			background: linear-gradient(
+				275deg, 
+				#ff5f52e7, #ff766be7, #ff897fe7, #ffa59de7, #98dfffe7, #69cefbe7, #3abbf5e7, #03a9f4e7, 
+				#ffa59de7, #ff897fe7, #ff766be7, #ff5f52e7);
+			background-size: 1600% 1600%;
+
+			-webkit-animation: t-bottom-bg-anim 18s ease infinite;
+			-moz-animation: t-bottom-bg-anim 18s ease infinite;
+			animation: t-bottom-bg-anim 18s ease infinite;
 		}
 
 		h1 {
 			color: $white_color;
 		}
 	}
+}
+
+@-webkit-keyframes t-bottom-bg-anim {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
+}
+@-moz-keyframes t-bottom-bg-anim {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
+}
+@keyframes t-bottom-bg-anim {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
+}
+
+@keyframes down-anim {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: .5
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
 }
