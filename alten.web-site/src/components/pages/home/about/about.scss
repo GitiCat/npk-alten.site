@@ -12,11 +12,11 @@
 			font-feature-settings: normal;
 
 			&:first-child {
-				font-size: 85px;
+				font-size: 76px;
 				min-width: 108px;
 				margin-left: -.4ch;
 				margin-top: -.1em;
-				margin-right: 60px;
+				margin-right: 46px;
 
 				color: #d0ebff;
                 font-weight: 700;
@@ -26,7 +26,7 @@
 			font-size: $normalTextFontSize;
             max-width: 300px;
             position: relative;
-            padding-bottom: 45px;
+            padding-bottom: 25px;
 
             display: block;
             color: $dark_text_color;

@@ -1,9 +1,14 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const webpack = require('webpack');
 
-module.exports = {
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CirculareDependencyPlugin = require('circular-dependency-plugin');
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+const smp = new SpeedMeasurePlugin();
+
+module.exports = (env, argv) => smp.wrap({
 	entry: ["babel-polyfill", "./src/index.js"],
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -37,9 +42,7 @@ module.exports = {
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader'
-				}
+				loader: 'babel-loader'
 			},
 			{
 				test: /\.scss?$/,
@@ -52,23 +55,23 @@ module.exports = {
 			},
 			{
 			  test: /\.(png|jpg|gif)$/,
-			  use: {
-			    loader: 'file-loader',
-			    options: {
-			      name: 'media/[name].[ext]',
-			      publicPath: 'public/'
-			    }
-			  }
-			}
-		]
+			  loader: 'file-loader',
+			  options: {
+				  name(file) {
+					  if(argv.mode === 'development') {
+						  return '[path][name].[ext]';
+					  }
+					  return '[contenthash].[ext]';
+				  },
+				  outputPath: 'images',
+			  },
+			},
+		],
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
-		new MiniCssExtractPlugin({
-			filename: 'style.[name].css'
-		}),
-		new HtmlWebpackPlugin({
-			template: './src/templates/default/index.html'
-		})
+		new MiniCssExtractPlugin({filename: 'style.[name].css'}),
+		new HtmlWebpackPlugin({template: './src/templates/default/index.html'}),
+		new CirculareDependencyPlugin()
 	]
-}
+})
